@@ -39,7 +39,7 @@
           );
 
           const data = await response.json();
-          updateResults(data);
+          updateResults(data.images);
         } catch (e) {
           console.log(e);
         }
