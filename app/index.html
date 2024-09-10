@@ -19,9 +19,12 @@
       class="results"
       style="display: flex; flex-wrap: wrap; gap: 1rem"
     ></div>
+    <p class="more">See more</p>
     <script>
       const button = document.querySelector("button");
       const results = document.querySelector(".results");
+      let nextResults = "";
+
       document.querySelector("form").addEventListener("submit", (e) => {
         e.preventDefault();
       });
@@ -34,12 +37,8 @@
 
       async function findImagesByQuery(query) {
         try {
-          const response = await fetch(
-            `http://localhost:3000/search?query=${query}`
-          );
-
-          const data = await response.json();
-          updateResults(data.images);
+          await fetchImages(`http://localhost:3000/search?query=${query}`);
+          addIntersectionObserver();
         } catch (e) {
           console.log(e);
         }
@@ -50,10 +49,21 @@
         return textBox.value;
       }
 
-      function updateResults(images) {
+      function loadImages(images) {
         images.forEach((image) => {
           results.appendChild(createImageElement(image));
         });
+      }
+
+      async function fetchImages(url) {
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          loadImages(data.images);
+          updateNext(data.next_page);
+        } catch (e) {
+          console.log(e);
+        }
       }
 
       function createImageElement(image) {
@@ -64,6 +74,29 @@
       }
 
       function addImageElement(imageElemet) {}
+
+      function updateNext(url) {
+        nextResults = url;
+      }
+
+      function addIntersectionObserver() {
+        const intersectionObserver = new IntersectionObserver(
+          (entries) => {
+            // If intersectionRatio is 0, the target is out of view
+            // and we do not need to do anything.
+            if (entries[0].intersectionRatio <= 0) return;
+
+            fetchImages(nextResults);
+            console.log("Loaded new items");
+          },
+          {
+            rootMargin: "0px 0px 50px 0px",
+            threshold: 1.0,
+          }
+        );
+        // start observing
+        intersectionObserver.observe(document.querySelector(".more"));
+      }
     </script>
   </body>
 </html>
