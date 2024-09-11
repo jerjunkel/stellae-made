@@ -21,19 +21,21 @@
     }
   </style>
   <body>
-    <nav class="search__bar">
-      <form action="">
-        <input
-          class="search__input"
-          type="text"
-          name=""
-          id=""
-          placeholder="What are you looking for?"
-        />
-        <button type="submit" class="s-btn">Search</button>
-      </form>
+    <nav class="navbar navbar__container">
+      <div class="navbar__wrapper">
+        <img src="./dist/img/stellae-logo.png" alt="" class="navbar__logo" />
+        <form action="">
+          <input
+            class="navbar__input"
+            type="text"
+            name=""
+            id=""
+            placeholder="What are you looking for?"
+          />
+          <button type="submit" class="s-btn">Find an image</button>
+        </form>
+      </div>
     </nav>
-
     <div class="results">
       <div class="results__bar">
         <p class="results__title">Search for an image</p>
@@ -43,8 +45,8 @@
         <div class="column"></div>
         <div class="column"></div>
       </div>
+      <p class="more">Loading...</p>
     </div>
-    <p class="more">See more</p>
     <script type="module" src="./dist/js/index.js"></script>
   </body>
 </html>

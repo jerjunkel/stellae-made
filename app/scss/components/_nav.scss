@@ -1,27 +1,46 @@
-.search {
-  &__bar {
-    display: flex;
+.navbar {
+  &__container {
     position: sticky;
     top: 0;
-    padding: var(--s-space-4);
     width: 100%;
-    border-bottom: 1px solid var(--s-color-border-light);
     background-color: white;
+    border-bottom: 1px solid var(--s-color-neutral-100);
+  }
 
-    form {
-      display: flex;
-      align-items: center;
-      gap: var(--s-space-4);
-    }
+  &__wrapper {
+    display: flex;
+    max-width: 1400px;
+    padding: var(--s-space-4) var(--s-space-10);
+    margin: 0 auto;
+    gap: var(--s-space-5);
+  }
+
+  &__logo {
+    width: 30px;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: var(--s-space-4);
   }
 
   &__input {
-    min-width: 300px;
+    min-width: 400px;
     border-radius: 6px;
     border: 1px solid var(--s-color-border-light);
     padding: var(--s-space-3);
     font-size: var(--s-text-label-lg-font-size);
-    font-weight: var(--s-text-label-lg-font-weigt);
+    font-weight: var(--s-text-label-lg-font-weight);
     line-height: var(--s-text-label-lg-line-height);
+
+    &::placeholder {
+      color: var(--s-color-neutral-400);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--s-color-neutral-300);
+    }
   }
 }
