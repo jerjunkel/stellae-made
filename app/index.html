@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stellae Image Search</title>
   </head>
+
+  <style>
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+  </style>
   <body>
     <form action="">
       <input
@@ -15,14 +29,17 @@
       />
       <button type="submit">Search</button>
     </form>
-    <div
-      class="results"
-      style="display: flex; flex-wrap: wrap; gap: 1rem"
-    ></div>
+    <div class="results">
+      <div class="column"></div>
+      <div class="column"></div>
+      <div class="column"></div>
+      <div class="column"></div>
+    </div>
     <p class="more">See more</p>
     <script>
       const button = document.querySelector("button");
       const results = document.querySelector(".results");
+      const columns = document.querySelectorAll(".column");
       let nextResults = "";
 
       document.querySelector("form").addEventListener("submit", (e) => {
@@ -31,7 +48,7 @@
 
       button.addEventListener("click", async (e) => {
         const searchQuery = getSearchQuery();
-        results.innerHTML = "";
+        columns.forEach((item) => (item.innerHTML = ""));
         const images = await findImagesByQuery(searchQuery);
       });
 
@@ -50,8 +67,11 @@
       }
 
       function loadImages(images) {
-        images.forEach((image) => {
-          results.appendChild(createImageElement(image));
+        const count = images.length;
+        const numberOfColumns = columns.length;
+        images.forEach((image, index) => {
+          const col = columns[index % numberOfColumns];
+          col.appendChild(createImageElement(image));
         });
       }
 
@@ -82,19 +102,15 @@
       function addIntersectionObserver() {
         const intersectionObserver = new IntersectionObserver(
           (entries) => {
-            // If intersectionRatio is 0, the target is out of view
-            // and we do not need to do anything.
             if (entries[0].intersectionRatio <= 0) return;
 
             fetchImages(nextResults);
-            console.log("Loaded new items");
           },
           {
             rootMargin: "0px 0px 50px 0px",
             threshold: 1.0,
           }
         );
-        // start observing
         intersectionObserver.observe(document.querySelector(".more"));
       }
     </script>
