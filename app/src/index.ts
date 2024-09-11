@@ -28,9 +28,9 @@ function setup() {
   function addImageResults(images: Image[]) {
     const numberOfColumns = columns.length;
     images.forEach((image) => {
-      results += 1;
       const col = columns[results % numberOfColumns];
       col.appendChild(createImageElement(image));
+      results += 1;
     });
   }
 
