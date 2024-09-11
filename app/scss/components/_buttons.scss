@@ -1,14 +1,14 @@
 .s-btn {
-  --btn-color: var(--s-color-secondary-400, #f7941d);
-  --btn-hover-color: var(--s-color-secondary-300);
-  --btn-text-color: var(--s-color-secondary-800, #222222);
+  --btn-color: var(--s-color-primary-400, #f7941d);
+  --btn-hover-color: var(--s-color-primary-300);
+  --btn-text-color: var(--s-color-text-light, #222222);
   --btn-border-size: 2px;
 
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   min-width: 120px;
-  padding: var(--s-space-4) var(--s-space-6) !important;
+  padding: var(--s-space-3) var(--s-space-6) !important;
   font-weight: 500;
   font-size: var(--s-fs-300);
   text-decoration: none;
@@ -17,6 +17,8 @@
   border-radius: var(--s-radius-round, 10px);
   transition: background-color ease 200ms;
   white-space: nowrap;
+  border: 2px solid var(--btn-color);
+  cursor: pointer;
 
   &:hover {
     background-color: var(--btn-hover-color);

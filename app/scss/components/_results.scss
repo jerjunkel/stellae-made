@@ -1,0 +1,13 @@
+.results {
+  max-width: 1400px;
+  padding: var(--s-space-6);
+  &__bar {
+    margin-bottom: var(--s-space-4);
+  }
+
+  &__title {
+    font-size: var(--s-text-heading-lg-font-size);
+    font-weight: var(--s-text-label-lg-font-weight);
+    margin: 0;
+  }
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stellae Image Search</title>
+    <link rel="stylesheet" href="./dist/css/main.css" />
   </head>
 
   <style>
@@ -13,26 +14,35 @@
       gap: 1.5rem;
     }
 
-    .results {
+    .results__items {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
   </style>
   <body>
-    <form action="">
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="What are you looking for?"
-      />
-      <button type="submit">Search</button>
-    </form>
+    <nav class="search__bar">
+      <form action="">
+        <input
+          class="search__input"
+          type="text"
+          name=""
+          id=""
+          placeholder="What are you looking for?"
+        />
+        <button type="submit" class="s-btn">Search</button>
+      </form>
+    </nav>
+
     <div class="results">
-      <div class="column"></div>
-      <div class="column"></div>
-      <div class="column"></div>
+      <div class="results__bar">
+        <p class="results__title">Search for an image</p>
+      </div>
+      <div class="results__items">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
     </div>
     <p class="more">See more</p>
     <script type="module" src="./dist/js/index.js"></script>
