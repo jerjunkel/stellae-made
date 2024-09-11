@@ -1,2 +1,5 @@
 import ImageFetcher from "./ImageFetcher.js";
-const imageFetcher = new ImageFetcher();
+import ImageStore from "./ImageStore.js";
+
+const fetcher = new ImageFetcher();
+const store = new ImageStore();

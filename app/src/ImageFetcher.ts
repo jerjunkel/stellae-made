@@ -1,20 +1,4 @@
-type Image = {
-  url: string;
-  alt: string;
-  src: {
-    original: string;
-    small: string;
-    medium: string;
-    large: string;
-  };
-};
-
-type ImageResponse = {
-  page: number;
-  images: Image[];
-  next_page: string;
-};
-
+import { ImageResponse } from "./Image";
 export default class ImageFetcher {
   private next = "";
   constructor() {}
