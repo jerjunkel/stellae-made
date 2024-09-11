@@ -1,0 +1,55 @@
+$primary: (
+  0: #ffffff,
+  25: #f9f7fc,
+  100: #ede7f7,
+  200: #c8a9fa,
+  300: #b38df1,
+  400: #9265da,
+  500: #7343c0,
+  600: #5929a6,
+  700: #43178a,
+  800: #300d69,
+  900: #0e0818,
+);
+
+$neutral: (
+  25: #fcfcfd,
+  50: #f9fafb,
+  100: #f2f4f7,
+  200: #eaecf0,
+  300: #d0d5dd,
+  400: #98a2b3,
+  500: #667085,
+  600: #475467,
+  700: #344054,
+  800: #1d2939,
+  900: #101828,
+);
+
+$text: (
+  "light": #fff,
+  "dark": #292d35,
+);
+
+$border: (
+  "light": #e2e2e2,
+  "dark": #292d35,
+);
+
+:root {
+  @each $scale, $color in $primary {
+    --s-color-primary-#{$scale}: #{$color};
+  }
+
+  @each $scale, $color in $neutral {
+    --s-color-neutral-#{$scale}: #{$color};
+  }
+
+  @each $scale, $color in $border {
+    --s-color-border-#{$scale}: #{$color};
+  }
+
+  @each $scale, $color in $text {
+    --s-color-text-#{$scale}: #{$color};
+  }
+}
