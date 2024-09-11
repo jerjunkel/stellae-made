@@ -1,0 +1,75 @@
+@use "../abstracts/typography";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  font-family: "Inter", "Poppins", Arial, Helvetica, sans-serif;
+  color: var(--s-color-text-dark);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: var(--s-text-heading-2xl-font-size);
+  font-weight: var(--s-text-heading-2xl-font-weight);
+  line-height: var(--s-text-heading-2xl-line-height);
+}
+h2 {
+  font-size: var(--s-text-heading-xl-font-size);
+  font-weight: var(--s-text-heading-xl-font-weight);
+  line-height: var(--s-text-heading-xl-line-height);
+}
+h3 {
+  font-size: var(--s-text-heading-lg-font-size);
+  font-weight: var(--s-text-heading-lg-font-weight);
+  line-height: var(--s-text-heading-lg-line-height);
+}
+h4 {
+  font-size: var(--s-text-heading-md-font-size);
+  font-weight: var(--s-text-heading-md-font-weight);
+  line-height: var(--s-text-heading-md-line-height);
+}
+h5 {
+  font-size: var(--s-text-heading-sm-font-size);
+  font-weight: var(--s-text-heading-sm-font-weight);
+  line-height: var(--s-text-heading-sm-line-height);
+}
+h6 {
+  font-size: var(--s-text-heading-xs-font-size);
+  font-weight: var(--s-text-heading-xs-font-weight);
+  line-height: var(--s-text-heading-xs-line-height);
+}
+
+p {
+  line-height: var(--s-text-body-md-line-height);
+}
+
+:root {
+  @each $scale, $size in typography.$scale {
+    --s-fs-#{$scale}: #{$size};
+  }
+
+  @each $weight, $size in typography.$weight {
+    --s-fw-#{$weight}: #{$size};
+  }
+
+  @each $height, $size in typography.$line-height {
+    --s-flh-#{$height}: #{$size};
+  }
+
+  @each $size, $specs in typography.$label {
+    @each $spec, $value in $specs {
+      --s-text-label-#{$size}-#{$spec}: #{$value};
+    }
+  }
+
+  @each $size, $specs in typography.$body {
+    @each $spec, $value in $specs {
+      --s-text-body-#{$size}-#{$spec}: #{$value};
+    }
+  }
+  @each $size, $specs in typography.$heading {
+    @each $spec, $value in $specs {
+      --s-text-heading-#{$size}-#{$spec}: #{$value};
+    }
+  }
+}

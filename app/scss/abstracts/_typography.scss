@@ -1,0 +1,120 @@
+$scale: (
+  100: 0.75rem,
+  200: 0.875rem,
+  300: 1rem,
+  400: 1.25rem,
+  500: 1.563rem,
+  600: 1.953rem,
+  700: 2.441rem,
+  800: 3.052rem,
+  900: 3.815rem,
+);
+
+$weight: (
+  "light": 300,
+  "regular": 400,
+  "semibold": 500,
+  "bold": 600,
+  "bolder": 700,
+  "black": 900,
+);
+
+$line-height: (
+  300: 0.75,
+  400: 1,
+  500: 1.25,
+  600: 1.5,
+  700: 1.75,
+  800: 2,
+  1000: 2.5,
+  1200: 3,
+);
+
+$label: (
+  "xs": (
+    "font-size": var(--s-fs-100),
+    "line-height": var(--s-flh-400),
+    "font-weight": var(--s-fw-bold),
+  ),
+  "sm": (
+    "font-size": var(--s-fs-200),
+    "line-height": var(--s-flh-400),
+    "font-weight": var(--s-fw-bold),
+  ),
+  "md": (
+    "font-size": var(--s-fs-300),
+    "line-height": var(--s-flh-400),
+    "font-weight": var(--s-fw-bold),
+  ),
+  "lg": (
+    "font-size": var(--s-fs-400),
+    "line-height": var(--s-flh-400),
+    "font-weight": var(--s-fw-bold),
+  ),
+  "xl": (
+    "font-size": var(--s-fs-500),
+    "line-height": var(--s-flh-400),
+    "font-weight": var(--s-fw-bold),
+  ),
+);
+
+$body: (
+  "xs": (
+    "font-size": var(--s-fs-100),
+    "line-height": var(--s-flh-600),
+    "font-weight": var(--s-fw-regular),
+  ),
+  "sm": (
+    "font-size": var(--s-fs-200),
+    "line-height": var(--s-flh-600),
+    "font-weight": var(--s-fw-regular),
+  ),
+  "md": (
+    "font-size": var(--s-fs-300),
+    "line-height": var(--s-flh-700),
+    "font-weight": var(--s-fw-regular),
+  ),
+  "lg": (
+    "font-size": var(--s-fs-400),
+    "line-height": var(--s-flh-600),
+    "font-weight": var(--s-fw-regular),
+  ),
+  "xl": (
+    "font-size": var(--s-fs-500),
+    "line-height": var(--s-flh-600),
+    "font-weight": var(--s-fw-regular),
+  ),
+);
+
+$heading: (
+  "xs": (
+    "font-size": var(--s-fs-400),
+    "line-height": var(--s-flh-500),
+    "font-weight": var(--s-fw-semibold),
+  ),
+  "sm": (
+    "font-size": var(--s-fs-500),
+    "line-height": var(--s-flh-500),
+    "font-weight": var(--s-fw-semibold),
+  ),
+  "md": (
+    "font-size": var(--s-fs-600),
+    "line-height": var(--s-flh-500),
+    "font-weight": var(--s-fw-semibold),
+  ),
+  "lg": (
+    "font-size": var(--s-fs-700),
+    "line-height": var(--s-flh-500),
+    "font-weight": var(--s-fw-semibold),
+  ),
+  "xl": (
+    "font-size": var(--s-fs-800),
+    "line-height": var(--s-flh-500),
+    "font-weight": var(--s-fw-semibold),
+  ),
+  "2xl": (
+    "font-size": var(--s-fs-900),
+    "line-height": var(--s-flh-500),
+    "font-weight": var(--s-fw-bold),
+  ),
+);
