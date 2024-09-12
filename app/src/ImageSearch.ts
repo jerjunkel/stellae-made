@@ -21,6 +21,7 @@ export default class ImageSearch {
   }
 
   async getNextSearchResults(): Promise<Image[]> {
+    if (this.fetcher.nextPageURL == "") return [];
     const response = await this.fetcher.fetchImages(this.fetcher.nextPageURL);
     return response.photos;
   }
