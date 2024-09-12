@@ -2,6 +2,10 @@ import Image from "./Image";
 export default class ImageStore {
   private store: Image[] = [];
 
+  get size(): number {
+    return this.store.length;
+  }
+
   addImages(image: Image[]) {
     this.store = [...this.store, ...image];
   }

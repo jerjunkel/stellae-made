@@ -8,6 +8,10 @@ export default class ImageSearch {
   private baseUrl = "https://api.pexels.com/v1/search";
   constructor() {}
 
+  get totalResults(): number {
+    return this.store.size;
+  }
+
   async findImagesByQuery(query: string): Promise<Image[]> {
     const response = await this.fetcher.fetchImages(
       `${this.baseUrl}?query=${query}`
