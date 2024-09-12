@@ -2,7 +2,7 @@ import service from "../services/image.service.js";
 const findImageByQuery = async (req, res) => {
   const queryParams = { ...req.query };
 
-  if (!queryParams.query || !queryParams.query == "") {
+  if (!queryParams.query || queryParams.query == "") {
     queryParams["query"] = "random";
   }
   const query = new URLSearchParams(queryParams).toString();
