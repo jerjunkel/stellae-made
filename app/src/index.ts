@@ -21,10 +21,11 @@ function setup() {
   });
 
   button.addEventListener("click", async (e) => {
-    const searchQuery = inputText?.value ?? "random";
+    const query = inputText?.value ?? "random";
+    if (query == "" || !query) return;
     columns.forEach((item) => (item.innerHTML = ""));
     imageSearch.clearSearchResults();
-    searchForImages(searchQuery);
+    searchForImages(query);
   });
 
   function addImageResults(images: Image[]) {
