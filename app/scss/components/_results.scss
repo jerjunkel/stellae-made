@@ -8,7 +8,14 @@
 
   &__title {
     font-size: var(--s-text-heading-lg-font-size);
-    font-weight: var(--s-text-label-lg-font-weight);
+    font-weight: var(--s-text-body-lg-font-weight);
     margin: 0;
+
+    .query {
+      font-size: var(--s-text-heading-lg-font-size);
+      font-weight: var(--s-text-label-lg-font-weight);
+      color: var(--s-color-primary-200);
+      text-transform: capitalize;
+    }
   }
 }

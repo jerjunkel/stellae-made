@@ -5,7 +5,7 @@ import Image from "./Image.js";
 export default class ImageSearch {
   private store = new ImageStore();
   private fetcher = new ImageFetcher();
-  private baseUrl = "http://localhost:3000/search";
+  private baseUrl = "https://api.pexels.com/v1/search";
   constructor() {}
 
   async findImagesByQuery(query: string): Promise<Image[]> {
