@@ -1,6 +1,11 @@
 import service from "../services/image.service.js";
 const findImageByQuery = async (req, res) => {
-  const query = new URLSearchParams(req.query).toString();
+  const queryParams = { ...req.query };
+
+  if (!queryParams.query || !queryParams.query == "") {
+    queryParams["query"] = "random";
+  }
+  const query = new URLSearchParams(queryParams).toString();
   try {
     const response = await service.findImageByQuery(query);
     const { next_page } = response;
