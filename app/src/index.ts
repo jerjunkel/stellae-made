@@ -1,6 +1,6 @@
 import ImageSearch from "./ImageSearch.js";
 import Image from "./Image.js";
-const imageSerach = new ImageSearch();
+const imageSearch = new ImageSearch();
 
 setup();
 
@@ -20,7 +20,8 @@ function setup() {
   button.addEventListener("click", async (e) => {
     const searchQuery = inputText?.value ?? "random";
     columns.forEach((item) => (item.innerHTML = ""));
-    const images = await imageSerach.findImagesByQuery(searchQuery);
+    imageSearch.clearSearchResults();
+    const images = await imageSearch.findImagesByQuery(searchQuery);
     addImageResults(images);
     addIntersectionObserver();
   });
@@ -36,7 +37,7 @@ function setup() {
 
   async function loadNextPageResults() {
     try {
-      const images = await imageSerach.getNextSearchResults();
+      const images = await imageSearch.getNextSearchResults();
       addImageResults(images);
     } catch (error) {
       console.log(error);

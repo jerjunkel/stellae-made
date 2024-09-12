@@ -20,4 +20,9 @@ export default class ImageSearch {
     const response = await this.fetcher.fetchImages(this.fetcher.nextPageURL);
     return response.images;
   }
+
+  clearSearchResults() {
+    this.store.empty();
+    this.fetcher.resetNext();
+  }
 }

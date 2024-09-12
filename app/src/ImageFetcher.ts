@@ -13,4 +13,8 @@ export default class ImageFetcher {
   get nextPageURL(): string {
     return this.next;
   }
+
+  resetNext() {
+    this.next = "";
+  }
 }
