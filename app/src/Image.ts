@@ -11,7 +11,7 @@ type Image = {
 
 type ImageResponse = {
   page: number;
-  images: Image[];
+  photos: Image[];
   next_page: string;
 };
 

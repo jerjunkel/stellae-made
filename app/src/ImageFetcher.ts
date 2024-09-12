@@ -10,7 +10,7 @@ export default class ImageFetcher {
           "sA7VQwMTDPfpxz6nMfgIhLtssilVibdHxgMClKSmzwTLwD2ih5pydqfj",
       },
     });
-    const data = await response.json();
+    const data = (await response.json()) as ImageResponse;
     const { page, photos, next_page } = data;
 
     const images = photos.map((item) => {
@@ -25,7 +25,7 @@ export default class ImageFetcher {
     this.next = data.next_page;
     return {
       page,
-      images,
+      photos: images,
       next_page,
     };
   }

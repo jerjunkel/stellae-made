@@ -12,13 +12,13 @@ export default class ImageSearch {
     const response = await this.fetcher.fetchImages(
       `${this.baseUrl}?query=${query}`
     );
-    this.store.addImages(response.images);
-    return response.images;
+    this.store.addImages(response.photos);
+    return response.photos;
   }
 
   async getNextSearchResults(): Promise<Image[]> {
     const response = await this.fetcher.fetchImages(this.fetcher.nextPageURL);
-    return response.images;
+    return response.photos;
   }
 
   clearSearchResults() {
