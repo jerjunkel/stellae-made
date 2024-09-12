@@ -25,6 +25,7 @@ function setup() {
     if (query == "" || !query) return;
     columns.forEach((item) => (item.innerHTML = ""));
     imageSearch.clearSearchResults();
+    results = 0;
     searchForImages(query);
   });
 
