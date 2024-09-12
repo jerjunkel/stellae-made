@@ -6,6 +6,7 @@ setup();
 
 function setup() {
   searchForImages("landscapes");
+  addIntersectionObserver();
   const form = document.querySelector("form");
   const button = document.querySelector("button");
   const inputText = document.querySelector("input");
@@ -69,7 +70,6 @@ function setup() {
     const images = await imageSearch.findImagesByQuery(query);
     updateSearchTitle(query);
     addImageResults(images);
-    addIntersectionObserver();
   }
 
   function updateSearchTitle(query: string) {

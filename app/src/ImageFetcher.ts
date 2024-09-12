@@ -22,7 +22,7 @@ export default class ImageFetcher {
       };
     });
 
-    this.next = data.next_page;
+    this.next = next_page;
     return {
       page,
       photos: images,
