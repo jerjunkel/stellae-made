@@ -47,7 +47,7 @@ function setup() {
 
   function createImageElement(image: Image) {
     const img = document.createElement("img");
-    img.src = image.src.medium;
+    img.src = image.src.large;
     img.alt = image.alt;
     return img;
   }
