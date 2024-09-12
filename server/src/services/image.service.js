@@ -15,7 +15,7 @@ const findImageByQuery = async (query) => {
 
     return {
       page,
-      images,
+      photos: images,
       next_page,
     };
   } catch (e) {
