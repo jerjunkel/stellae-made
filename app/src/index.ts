@@ -5,6 +5,7 @@ const imageSearch = new ImageSearch();
 setup();
 
 function setup() {
+  searchForImages("landscapes");
   const form = document.querySelector("form");
   const button = document.querySelector("button");
   const inputText = document.querySelector("input");
@@ -21,9 +22,7 @@ function setup() {
     const searchQuery = inputText?.value ?? "random";
     columns.forEach((item) => (item.innerHTML = ""));
     imageSearch.clearSearchResults();
-    const images = await imageSearch.findImagesByQuery(searchQuery);
-    addImageResults(images);
-    addIntersectionObserver();
+    searchForImages(searchQuery);
   });
 
   function addImageResults(images: Image[]) {
@@ -63,5 +62,11 @@ function setup() {
       }
     );
     intersectionObserver.observe(document.querySelector(".more")!);
+  }
+
+  async function searchForImages(query: string) {
+    const images = await imageSearch.findImagesByQuery(query);
+    addImageResults(images);
+    addIntersectionObserver();
   }
 }
