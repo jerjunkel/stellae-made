@@ -55,7 +55,6 @@ function setup() {
     const intersectionObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].intersectionRatio <= 0) return;
-        console.log("Hello!");
         loadNextPageResults();
       },
       {
