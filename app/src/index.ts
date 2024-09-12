@@ -5,11 +5,12 @@ const imageSearch = new ImageSearch();
 setup();
 
 function setup() {
-  searchForImages("landscapes");
+  // searchForImages("landscapes");
   const form = document.querySelector("form");
   const button = document.querySelector("button");
   const inputText = document.querySelector("input");
   const columns = document.querySelectorAll(".column");
+  const resultsTitle = document.querySelector(".results__title");
   let results = 0;
 
   if (!form || !button) return;
@@ -66,7 +67,13 @@ function setup() {
 
   async function searchForImages(query: string) {
     const images = await imageSearch.findImagesByQuery(query);
+    updateSearchTitle(query);
     addImageResults(images);
     addIntersectionObserver();
+  }
+
+  function updateSearchTitle(query: string) {
+    if (!resultsTitle) return;
+    resultsTitle!.innerHTML = `Showing results for: <span class="quer"> ${query} </span>`;
   }
 }
