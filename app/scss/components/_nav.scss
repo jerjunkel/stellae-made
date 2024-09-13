@@ -10,7 +10,7 @@
   &__wrapper {
     display: flex;
     max-width: 1400px;
-    padding: var(--s-space-4) var(--s-space-10);
+    padding: var(--s-space-4);
     margin: 0 auto;
     gap: var(--s-space-5);
   }
@@ -40,8 +40,8 @@
   }
 
   &__input {
-    min-width: 400px;
-    border-radius: 6px;
+    min-width: 500px;
+    border-radius: 10px;
     border: 1px solid var(--s-color-border-light);
     padding: var(--s-space-3);
     font-size: var(--s-text-label-lg-font-size);
