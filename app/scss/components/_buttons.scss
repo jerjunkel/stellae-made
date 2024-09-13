@@ -1,7 +1,7 @@
 .s-btn {
-  --btn-color: var(--s-color-primary-400, #f7941d);
-  --btn-hover-color: var(--s-color-primary-300);
-  --btn-text-color: var(--s-color-text-light, #222222);
+  --btn-color: var(--s-color-primary-500, #7343c0);
+  --btn-hover-color: var(--s-color-primary-400, #9265da);
+  --btn-text-color: var(--s-color-text-light, #ffffff);
   --btn-border-size: 2px;
 
   display: inline-flex !important;
@@ -9,7 +9,7 @@
   justify-content: center;
   min-width: 120px;
   padding: var(--s-space-4) var(--s-space-6) !important;
-  font-weight: 500;
+  font-weight: var(--s-text-label-md-font-weight);
   font-size: var(--s-fs-300);
   font-family: "Inter";
   text-decoration: none;
