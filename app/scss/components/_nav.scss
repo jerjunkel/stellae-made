@@ -21,15 +21,14 @@
     justify-content: center;
     aspect-ratio: 1/1;
     background: var(--s-color-primary-100);
-    padding: var(--s-space-4);
-    border-radius: 100vh;
+    padding: var(--s-space-2);
+    border-radius: 10px;
 
     p {
       font-size: var(--s-text-label-sm-font-size);
       font-weight: var(--s-text-label-md-font-weight);
       margin: 0;
       line-height: 1.4;
-      text-align: center;
     }
   }
 
