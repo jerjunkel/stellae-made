@@ -10,7 +10,7 @@ function setup() {
   const form = document.querySelector("form");
   const button = document.querySelector("button");
   const inputText = document.querySelector("input");
-  const columns = document.querySelectorAll(".column");
+  const columns = document.querySelectorAll(".results__column");
   const resultsTitle = document.querySelector(".results__title");
   let results = 0;
 
