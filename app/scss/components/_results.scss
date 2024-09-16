@@ -34,3 +34,7 @@
     gap: var(--item-gap-size);
   }
 }
+
+img {
+  transition: opacity ease-in 400ms;
+}

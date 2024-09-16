@@ -33,7 +33,8 @@ function setup() {
     const numberOfColumns = columns.length;
     images.forEach((image) => {
       const col = columns[results % numberOfColumns];
-      col.appendChild(createImageElement(image));
+      const imageElement = createImageElement(image);
+      col.appendChild(imageElement);
       results += 1;
     });
   }
@@ -49,8 +50,13 @@ function setup() {
 
   function createImageElement(image: Image) {
     const img = document.createElement("img");
-    img.src = image.src.large;
+    img.src = image.src.medium;
+    img.style.opacity = "0";
     img.alt = image.alt;
+    img.onload = (e) => {
+      const target = e.target as HTMLImageElement;
+      target.style.opacity = "1";
+    };
     return img;
   }
 
