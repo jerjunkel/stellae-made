@@ -56,6 +56,10 @@ function setup() {
     img.onload = (e) => {
       const target = e.target as HTMLImageElement;
       target.style.opacity = "1";
+
+      setTimeout(() => {
+        img.src = image.src.large;
+      }, 1200);
     };
     return img;
   }
