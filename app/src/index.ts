@@ -51,11 +51,11 @@ function setup() {
   function createImageElement(image: Image) {
     const img = document.createElement("img");
     img.src = image.src.medium;
-    img.style.opacity = "0";
+    img.classList.add("results__img");
     img.alt = image.alt;
     img.onload = (e) => {
       const target = e.target as HTMLImageElement;
-      target.style.opacity = "1";
+      target.classList.add("loaded");
 
       setTimeout(() => {
         img.src = image.src.large;
