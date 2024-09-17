@@ -31,11 +31,30 @@ function setup() {
 
   function addImageResults(images: Image[]) {
     const numberOfColumns = columns.length;
+    const columnFragments = createColumnFragments(numberOfColumns);
+
     images.forEach((image) => {
-      const col = columns[results % numberOfColumns];
+      const columnFragment = columnFragments[results % numberOfColumns];
       const imageElement = createImageElement(image);
-      col.appendChild(imageElement);
+      columnFragment.appendChild(imageElement);
       results += 1;
+    });
+
+    addColumnFragments(columnFragments);
+  }
+
+  function createColumnFragments(numberOfColumns: number): DocumentFragment[] {
+    let columnFragments: DocumentFragment[] = [];
+    for (let x = 0; x < numberOfColumns; x++) {
+      columnFragments.push(new DocumentFragment());
+    }
+
+    return columnFragments;
+  }
+
+  function addColumnFragments(fragments: DocumentFragment[]) {
+    fragments.forEach((fragment, index) => {
+      columns[index].appendChild(fragment);
     });
   }
 
