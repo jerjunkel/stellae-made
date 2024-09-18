@@ -23,20 +23,23 @@
   &__items {
     --item-gap-size: 1.5rem;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start;
     gap: var(--item-gap-size);
   }
 
   &__column {
     display: flex;
     flex-direction: column;
+    flex-basis: 25%;
     gap: var(--item-gap-size);
   }
 
   &__img {
     opacity: 0;
     transition: opacity ease-in 500ms;
+    max-width: 100%;
 
     &.loaded {
       opacity: 1;
